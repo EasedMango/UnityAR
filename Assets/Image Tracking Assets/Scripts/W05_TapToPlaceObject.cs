@@ -11,6 +11,8 @@ public class W05_TapToPlaceObject : MonoBehaviour
     public GameObject prefabToSpawn;
 
     GameObject spawnedObject;
+
+    GameObject Selected;
     ARRaycastManager arRaycastManager;
     Vector2 touchPosition;
 
