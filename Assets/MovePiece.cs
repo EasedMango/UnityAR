@@ -49,9 +49,25 @@ public class MovePiece : MonoBehaviour
             }
             else
             {
-
+                string current = selectedGameObject.tag;
+                string selected = hit.transform.gameObject.tag;
+                
                 currentPieceColor.material.color = prevColor;
+
+                if (current == "white" && selected == "white" || current == "black" && selected == "black")
+                {
+                    selectedGameObject = null;
+                    currentPieceColor = null;
+                    return;
+                }
+
                 selectedGameObject.transform.position = hit.point;
+
+                if (current == "white" && selected == "black" || current == "black" && selected == "white")
+                {
+                    Destroy(hit.transform.gameObject);
+                }
+
                 selectedGameObject = null;
                 currentPieceColor = null;
             }

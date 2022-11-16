@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cube
+  - Movable
+  - White
+  - Black
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Moveable
   - Water
   - UI
   - 
