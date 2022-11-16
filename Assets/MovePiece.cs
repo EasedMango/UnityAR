@@ -69,7 +69,7 @@ public class MovePiece : MonoBehaviour
                 {
                     Destroy(hit.transform.gameObject);
                 }
-
+                                
                 selectedGameObject = null;
                 currentPieceColor = null;
             }
