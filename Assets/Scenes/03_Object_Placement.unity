@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3708985, g: 0.3783704, b: 0.35722548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -915,6 +915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastManager: {fileID: 267242923}
   spawnablePrefab: {fileID: 2143506754211480654, guid: 0968ed3c6ce4f1f4aa5363b457b8c160, type: 3}
+  movable:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &382935063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1365,6 +1368,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastManager: {fileID: 267242923}
   spawnablePrefab: {fileID: 1233307468}
+  movable:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1001 &719970040
 PrefabInstance:
   m_ObjectHideFlags: 0

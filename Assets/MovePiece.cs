@@ -12,7 +12,7 @@ public class MovePiece : MonoBehaviour
     ARRaycastManager raycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     [SerializeField] GameObject spawnablePrefab;
-
+    [SerializeField] public LayerMask movable;
     private Camera arCam;
     private GameObject selectedGameObject;
     private Color prevColor;
@@ -40,8 +40,10 @@ public class MovePiece : MonoBehaviour
                 currentPieceColor = hit.collider.gameObject.GetComponent<Renderer>();
                 // lines.SetPositions(new Vector3[]{ arCam.ScreenToWorldPoint(Input.GetTouch(0).position), hit.point });
 
-                    prevColor = currentPieceColor.material.color;
-                if (hit.collider.gameObject.CompareTag("Movable"))
+                prevColor = currentPieceColor.material.color;
+
+
+                if (hit.collider.gameObject.CompareTag("Black")|| hit.collider.gameObject.CompareTag("White"))
                 {
                     currentPieceColor.material.color = Color.red;
                     selectedGameObject = hit.collider.gameObject;
@@ -51,10 +53,10 @@ public class MovePiece : MonoBehaviour
             {
                 string current = selectedGameObject.tag;
                 string selected = hit.transform.gameObject.tag;
-                
+
                 currentPieceColor.material.color = prevColor;
 
-                if (current == "white" && selected == "white" || current == "black" && selected == "black")
+                if (current == "White" && selected == "White" || current == "Black" && selected == "Black")
                 {
                     selectedGameObject = null;
                     currentPieceColor = null;
@@ -63,7 +65,7 @@ public class MovePiece : MonoBehaviour
 
                 selectedGameObject.transform.position = hit.point;
 
-                if (current == "white" && selected == "black" || current == "black" && selected == "white")
+                if (current == "White" && selected == "Black" || current == "Black" && selected == "White")
                 {
                     Destroy(hit.transform.gameObject);
                 }
